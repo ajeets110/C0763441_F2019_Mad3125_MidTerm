@@ -100,4 +100,14 @@ public class CRACustomer {
         return actual_ei;
     }
 
+    // Calculating provincial tax
+    public double provincialTax(){
+        double pro_tax=0.0;
+
+        double first_slab_perc=5.05;
+        double first_slab=33324;
+
+        double second_slab_perc=9.15;
+        double second_slab=43907;
+
 }
