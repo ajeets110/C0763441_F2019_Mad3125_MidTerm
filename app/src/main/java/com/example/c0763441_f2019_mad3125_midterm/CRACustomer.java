@@ -1,5 +1,8 @@
 package com.example.c0763441_f2019_mad3125_midterm;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class CRACustomer {
 
     int sin_number;
@@ -101,6 +104,15 @@ public class CRACustomer {
         }
         return actual_ei;
     }
-
+    // http://zetcode.com/java/numberformat/
     
+    public String amountFomatter()
+    {
+        NumberFormat nf = NumberFormat.getInstance(new Locale("en", "US"));
+        String val = nf.format("$"+this);
+
+        return val;
+
+    }
+
 }
