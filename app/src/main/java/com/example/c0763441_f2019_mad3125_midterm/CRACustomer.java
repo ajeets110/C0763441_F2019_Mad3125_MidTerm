@@ -4,20 +4,30 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.text.NumberFormat;
+import java.util.Date;
 import java.util.Locale;
 
 public class CRACustomer implements Parcelable {
- 
+
     String sin_number;
     String first_name;
     String  last_name;
     String gender;
     String full_name;
+    Date dob,filingDate;
+
     double gross_income;
     double rrsp_contribution;
     double EI;
     double total_taxable_amount=(gross_income - (cppAmount()+rrspAmount()+eiAmount()));
+    double total_tax_paid=provincialTax()+federalTax();
 
+    public Date getDob() {
+        return dob;
+    }
+    public Date getFilingDate() {
+        return filingDate;
+    }
 
     // G E T T E R   A N D   S E T T E R
 
@@ -172,5 +182,46 @@ public class CRACustomer implements Parcelable {
         gross_income = parcel.readDouble();
         rrsp_contribution = parcel.readDouble();
 
+    }
+    // Calculating provincial tax
+    public double provincialTax(){
+        double pro_tax=0.0;
+
+        double first_slab_perc=5.05;
+        double first_slab=33324;
+
+        double second_slab_perc=9.15;
+        double second_slab=43907;
+
+        double third_slab_perc=11.16;
+        double third_slab=62187;
+
+        double fourth_slab_perc=12.16;
+        double fourth_slab=70000;
+
+        double final_slab=0.01;
+        double final_slab_perc=13.16;
+        total_taxable_amount=total_taxable_amount-10582.00;
+        if(total_taxable_amount<=first_slab) {
+            pro_tax = (first_slab * first_slab_perc) / 100;
+            total_taxable_amount = total_taxable_amount - first_slab;
+        }
+
+        if(total_taxable_amount<=second_slab) {
+            pro_tax = (second_slab * second_slab_perc) / 100;
+            total_taxable_amount = total_taxable_amount - second_slab;
+        }
+        if(total_taxable_amount<=third_slab) {
+            pro_tax = (third_slab * third_slab_perc) / 100;
+            total_taxable_amount = total_taxable_amount - third_slab;
+        }
+        if(total_taxable_amount<=fourth_slab) {
+            pro_tax = (fourth_slab * fourth_slab_perc) / 100;
+            total_taxable_amount = total_taxable_amount - fourth_slab;
+        }
+        if(total_taxable_amount<=final_slab) {
+            pro_tax=(final_slab * final_slab_perc)/100;
+        }
+        return pro_tax;
     }
 }
