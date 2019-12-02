@@ -74,5 +74,15 @@ public class CRACustomer {
         return actual_cpp;
     }
 
-    
+    public double rrspAmount(){
+        double rrsp_perc=18.00;
+        double actual_rrsp=(gross_income*rrsp_perc)/100;
+        if(actual_rrsp>rrsp_contribution) {
+            System.out.println("RRSP amount exceeded ,You may have to face penalty");
+        }
+        return actual_rrsp;
+    }
+
+
+
 }
