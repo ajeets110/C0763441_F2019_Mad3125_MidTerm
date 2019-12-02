@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     Button btn_submit;
     TextView txt_age;
     DatePickerDialog datePickerDialog;
+    int d_day;
+    int d_month;
+    int d_year;
 
 
     @Override
