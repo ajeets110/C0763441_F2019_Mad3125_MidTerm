@@ -51,6 +51,15 @@ public class DisplayActivity extends AppCompatActivity {
         txt_gross_income.setText(" GROSS INCOME: \t" + customer.getGross_income());
         lbl_RrspContributed.setText("RRSP Contributed: \t" + customer.getRrsp_contribution());
 
+        // calculate  cpp
+        double grossIncome = customer.getGross_income();
+        if(grossIncome > 57400.00){
+            cpp = (57400.00 * 0.051); //5.10%
+        } else {
+            cpp = (grossIncome * 0.051);
+        }
+        lbl_cpp.setText("CPP COntribution in Year:\t" + cpp);
+
 
     }
 }
