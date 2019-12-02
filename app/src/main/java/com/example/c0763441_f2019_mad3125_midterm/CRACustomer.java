@@ -1,9 +1,12 @@
 package com.example.c0763441_f2019_mad3125_midterm;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class CRACustomer {
+public class CRACustomer implements Parcelable {
 
     int sin_number;
     String first_name;
@@ -115,4 +118,13 @@ public class CRACustomer {
 
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
+    }
 }
