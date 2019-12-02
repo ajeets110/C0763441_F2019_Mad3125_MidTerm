@@ -74,6 +74,7 @@ public class CRACustomer {
         return actual_cpp;
     }
 
+    // Calculating RRSP Amount
     public double rrspAmount(){
         double rrsp_perc=18.00;
         double actual_rrsp=(gross_income*rrsp_perc)/100;
