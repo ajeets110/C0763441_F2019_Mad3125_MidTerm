@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     double rrs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        parsing();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txt_date= findViewById(R.id.txtDate);
@@ -100,6 +100,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this, DisplayActivity.class);
+                // TYPE Casting
+                sin = Integer.parseInt(edt_sin.getText().toString());
+                g_income = Double.parseDouble(gross_income.getText().toString());
+                rrs = Double.parseDouble(rrsp_contribution.getText().toString());
+                
                 intent.putExtra("User_Data", new CRACustomer(sin, edt_fname.getText().toString(), edt_lname.getText().toString(), (edt_fname.getText().toString() + " " + edt_lname.getText().toString()), g_income, rrs));
                 startActivity(intent);
             }
@@ -117,9 +122,4 @@ public class MainActivity extends AppCompatActivity {
         txt_date.setText(sdf.format(calendar.getTime()));
     }
 
-    private void parsing(){
-        sin = Integer.parseInt(String.valueOf(edt_sin.getText()));
-        g_income = Double.parseDouble(String.valueOf(gross_income.getText()));
-        rrs = Double.parseDouble(String.valueOf(rrsp_contribution.getText()));
-    }
 }
