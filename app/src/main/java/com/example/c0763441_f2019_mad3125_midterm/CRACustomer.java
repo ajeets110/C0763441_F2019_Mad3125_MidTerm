@@ -84,7 +84,7 @@ public class CRACustomer {
         return actual_rrsp;
     }
 
-    // C a l c u l a t i n g   E I   a m o u n t 
+    // C a l c u l a t i n g   E I   a m o u n t
     public double eiAmount(){
 
         double ei_slab=53100.00;
@@ -103,11 +103,15 @@ public class CRACustomer {
     // C a l  c u l a t i n g   P r o v i n c i a l   t a x
     public double provincialTax(){
         double pro_tax=0.0;
-
         double first_slab_perc=5.05;
         double first_slab=33324;
-
         double second_slab_perc=9.15;
         double second_slab=43907;
+        double third_slab_perc=11.16;
+        double third_slab=62187;
+        double fourth_slab_perc=12.16;
+        double fourth_slab=70000;
+        double final_slab=0.01;
+        double final_slab_perc=13.16;
 
 }
