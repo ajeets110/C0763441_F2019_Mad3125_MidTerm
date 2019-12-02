@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    // C o m m e n t   a d d e d
     TextView txt_date;
     RadioGroup rg_gender;
     RadioButton rb_male;
