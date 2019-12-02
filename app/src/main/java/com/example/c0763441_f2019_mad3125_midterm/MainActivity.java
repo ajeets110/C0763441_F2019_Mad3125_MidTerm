@@ -37,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        txt_date= findViewById(R.id.txtDate);
+        txt_age=findViewById(R.id.txtAge);
+        rg_gender=findViewById(R.id.rgGender);
+        rb_male=findViewById(R.id.rbMale);
+        rb_female=findViewById(R.id.rbFemale);
+        rb_others=findViewById(R.id.rbOthers);
+        
     }
 
     // D a t e   f o r m a t
