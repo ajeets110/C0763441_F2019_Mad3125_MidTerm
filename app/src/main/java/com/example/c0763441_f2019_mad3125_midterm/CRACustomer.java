@@ -105,7 +105,7 @@ public class CRACustomer {
         return actual_ei;
     }
     // http://zetcode.com/java/numberformat/
-    
+
     public String amountFomatter()
     {
         NumberFormat nf = NumberFormat.getInstance(new Locale("en", "US"));
