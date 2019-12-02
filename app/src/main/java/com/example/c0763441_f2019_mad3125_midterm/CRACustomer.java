@@ -126,5 +126,14 @@ public class CRACustomer implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
 
+        parcel.writeString(String.valueOf(sin_number));
+        parcel.writeString(first_name);
+        parcel.writeString(last_name);
+        parcel.writeString(full_name);
+        parcel.writeDouble(gross_income);
+        parcel.writeDouble(rrsp_contribution);
+        parcel.writeDouble(EI);
+        parcel.writeDouble(total_taxable_amount);
+
     }
 }
