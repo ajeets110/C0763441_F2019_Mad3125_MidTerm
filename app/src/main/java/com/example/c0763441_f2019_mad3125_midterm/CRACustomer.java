@@ -19,6 +19,29 @@ public class CRACustomer implements Parcelable {
 
     // G E T T E R   A N D   S E T T E R
 
+    protected CRACustomer(Parcel in) {
+        sin_number = in.readInt();
+        first_name = in.readString();
+        last_name = in.readString();
+        full_name = in.readString();
+        gross_income = in.readDouble();
+        rrsp_contribution = in.readDouble();
+        EI = in.readDouble();
+        total_taxable_amount = in.readDouble();
+    }
+
+    public static final Creator<CRACustomer> CREATOR = new Creator<CRACustomer>() {
+        @Override
+        public CRACustomer createFromParcel(Parcel in) {
+            return new CRACustomer(in);
+        }
+
+        @Override
+        public CRACustomer[] newArray(int size) {
+            return new CRACustomer[size];
+        }
+    };
+
     public int getSin_number() {
         return sin_number;
     }
