@@ -8,10 +8,11 @@ import java.util.Locale;
 
 public class CRACustomer implements Parcelable {
 
-    int sin_number;
+    String sin_number;
     String first_name;
     String  last_name;
-    String full_name=last_name.toUpperCase()+","+first_name;
+    String gender;
+    String full_name;
     double gross_income;
     double rrsp_contribution;
     double EI;
@@ -19,18 +20,6 @@ public class CRACustomer implements Parcelable {
 
 
     // G E T T E R   A N D   S E T T E R
-
-    protected CRACustomer(Parcel in) {
-        sin_number = in.readInt();
-        first_name = in.readString();
-        last_name = in.readString();
-        full_name = in.readString();
-        gross_income = in.readDouble();
-        rrsp_contribution = in.readDouble();
-        EI = in.readDouble();
-        total_taxable_amount = in.readDouble();
-    }
-
 
 
     public static final Creator<CRACustomer> CREATOR = new Creator<CRACustomer>() {
@@ -45,11 +34,11 @@ public class CRACustomer implements Parcelable {
         }
     };
 
-    public int getSin_number() {
+    public String getSin_number() {
         return sin_number;
     }
 
-    public void setSin_number(int sin_number) {
+    public void setSin_number(String sin_number) {
         this.sin_number = sin_number;
     }
 
@@ -152,26 +141,36 @@ public class CRACustomer implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
 
-        parcel.writeString(String.valueOf(sin_number));
+        parcel.writeString(sin_number);
         parcel.writeString(first_name);
         parcel.writeString(last_name);
         parcel.writeString(full_name);
         parcel.writeDouble(gross_income);
         parcel.writeDouble(rrsp_contribution);
-        parcel.writeDouble(EI);
-        parcel.writeDouble(total_taxable_amount);
+//        parcel.writeDouble(EI);
+//        parcel.writeDouble(total_taxable_amount);
 
     }
 
-    public CRACustomer(int sin_number, String first_name, String last_name, String full_name, double gross_income, double rrsp_contribution) {
+    public CRACustomer(String sin_number, String first_name, String last_name, String gender, double gross_income, double rrsp_contribution) {
         this.sin_number = sin_number;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.full_name = full_name;
         this.gross_income = gross_income;
         this.rrsp_contribution = rrsp_contribution;
         this.EI = eiAmount();
+        this.gender = gender;
     }
 
 
+    public CRACustomer(Parcel parcel){
+        sin_number = parcel.readString();
+        first_name = parcel.readString();
+        last_name = parcel.readString();
+        full_name = parcel.readString();
+        gender = parcel.readString();
+        gross_income = parcel.readDouble();
+        rrsp_contribution = parcel.readDouble();
+
+    }
 }

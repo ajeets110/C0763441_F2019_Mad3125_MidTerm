@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,34 +14,19 @@
         android:padding="6dp"
         android:text="Enter Details"/>
 
-    <TextView
-        android:id="@+id/edtFname"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
-        <com.google.android.material.textfield.TextInputEditText
+    <EditText
+        android:id="@+id/edtFname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="First Name" />
-    <TextView
+    <EditText
         android:id="@+id/edtLname"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Last Name" />
-
-
-    <TextView
-        android:id="@+id/txtAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:outlineProvider="bounds"
-        android:textSize="18sp" />
+        android:hint="Last Name"/>
+
+
 
     <TextView
         android:id="@+id/txtDate"
@@ -77,38 +63,22 @@
             android:text="Others" />
     </RadioGroup>
 
-    <TextView
+    <EditText
         android:id="@+id/edtSin"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:hint="Sin Number"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="SIN Number"
-             />
-
-    <TextView
+    <EditText
         android:id="@+id/edtGrossIncome"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Gross Income"
-            android:inputType="numberDecimal" />
+        android:layout_height="wrap_content"
+        android:hint="Gross Income"
+        android:inputType="numberDecimal" />
 
 
-    <TextView
+    <EditText
         android:id="@+id/edtRRSP"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="RRSP"

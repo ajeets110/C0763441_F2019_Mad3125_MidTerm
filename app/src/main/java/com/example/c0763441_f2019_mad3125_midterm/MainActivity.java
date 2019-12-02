@@ -26,29 +26,21 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rb_male;
     RadioButton rb_female;
     RadioButton rb_others;
-    TextView txt_fullName;
     TextView edt_fname;
     TextView edt_lname;
     Button btn_submit;
     TextView txt_age;
     DatePickerDialog datePickerDialog;
-    int d_day;
-    int d_month;
-    int d_year;
     final Calendar calendar = Calendar.getInstance();
     TextView edt_sin;
     TextView gross_income;
     TextView rrsp_contribution;
-    int sin;
-    double g_income;
-    double rrs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txt_date= findViewById(R.id.txtDate);
-        txt_age=findViewById(R.id.txtAge);
         rg_gender=findViewById(R.id.rgGender);
         rb_male=findViewById(R.id.rbMale);
         rb_female=findViewById(R.id.rbFemale);
@@ -95,23 +87,22 @@ public class MainActivity extends AppCompatActivity {
 
         });
         //submit button
+
         btn_submit=findViewById(R.id.btnSubmit);
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this, DisplayActivity.class);
+
                 // TYPE Casting
-                sin = Integer.parseInt(edt_sin.getText().toString());
-                g_income = Double.parseDouble(gross_income.getText().toString());
-                rrs = Double.parseDouble(rrsp_contribution.getText().toString());
-                
-                intent.putExtra("User_Data", new CRACustomer(sin, edt_fname.getText().toString(), edt_lname.getText().toString(), (edt_fname.getText().toString() + " " + edt_lname.getText().toString()), g_income, rrs));
-                startActivity(intent);
+                Double g_income = Double.parseDouble(gross_income.getText().toString());
+                Double rrs = Double.parseDouble(rrsp_contribution.getText().toString());
+                Intent mIntent=new Intent(MainActivity.this, DisplayActivity.class);
+                mIntent.putExtra("User_Data", new CRACustomer(edt_sin.getText().toString(), edt_fname.getText().toString(), edt_lname.getText().toString(), Gender_selected, g_income, rrs));
+                startActivity(mIntent);
             }
         });
 
     }
-
 
 
     // D a t e   f o r m a t
