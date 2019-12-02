@@ -84,6 +84,20 @@ public class CRACustomer {
         return actual_rrsp;
     }
 
+    // calculating EI amount
+    public double eiAmount(){
 
+        double ei_slab=53100.00;
+        double ei_rate=1.62;
+        double actual_ei=0.0;
+        if(gross_income>=ei_slab)
+        {
+            actual_ei=(ei_slab * ei_rate)/100;
+        }
+        else {
+            actual_ei=(gross_income * ei_rate)/100;
+        }
+        return actual_ei;
+    }
 
 }
