@@ -7,7 +7,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class CRACustomer implements Parcelable {
-
+ 
     String sin_number;
     String first_name;
     String  last_name;
