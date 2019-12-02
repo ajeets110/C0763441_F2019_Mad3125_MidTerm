@@ -58,4 +58,21 @@ public class CRACustomer {
     public void setRrsp_contribution(double rrsp_contribution) {
         this.rrsp_contribution = rrsp_contribution;
     }
+
+    // calculating CPP amount
+    public double cppAmount(){
+        double cpp_slab=57400.00;
+        double cpp_rate=5.10;
+        double actual_cpp=0.0;
+        if(gross_income>=cpp_slab)
+        {
+            actual_cpp=(cpp_slab*cpp_rate)/100;
+        }
+        else {
+            actual_cpp=(gross_income*cpp_rate)/100;
+        }
+        return actual_cpp;
+    }
+
+    
 }
