@@ -60,6 +60,13 @@ public class DisplayActivity extends AppCompatActivity {
         }
         lbl_cpp.setText("CPP COntribution in Year:\t" + cpp);
 
+        // calculate employement insurance
+        if(grossIncome > 53100){
+            ei = (53100 * 0.0162); //1.62%
+        }else{
+            ei = (grossIncome * (1.62/100));
+        }
+        lbl_empInsurance.setText("Employeement Insurance: \t" + ei);
 
     }
 }
