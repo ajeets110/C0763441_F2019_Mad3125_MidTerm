@@ -84,7 +84,7 @@ public class CRACustomer {
         return actual_rrsp;
     }
 
-    // calculating EI amount
+    // C a l c u l a t i n g   E I   a m o u n t 
     public double eiAmount(){
 
         double ei_slab=53100.00;
@@ -100,7 +100,7 @@ public class CRACustomer {
         return actual_ei;
     }
 
-    // Calculating provincial tax
+    // C a l  c u l a t i n g   P r o v i n c i a l   t a x
     public double provincialTax(){
         double pro_tax=0.0;
 
