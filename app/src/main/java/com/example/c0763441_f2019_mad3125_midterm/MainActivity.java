@@ -39,13 +39,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // D a t e   f o r m a t
     private void dateFormat() {
         String myFormat = "dd-MMM-yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         txt_date.setText(sdf.format(calendar.getTime()));
-
-
     }
 
 }
