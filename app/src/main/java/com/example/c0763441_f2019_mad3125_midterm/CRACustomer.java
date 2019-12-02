@@ -249,6 +249,24 @@ public class CRACustomer implements Parcelable {
             total_taxable_amount = total_taxable_amount - first_slab;
         }
 
+        if(total_taxable_amount>=second_slab) {
+            fed_tax = (second_slab * second_slab_perc) / 100;
+            total_taxable_amount = total_taxable_amount - second_slab;
+        }
+        if(total_taxable_amount>=third_slab) {
+            fed_tax = (third_slab * third_slab_perc) / 100;
+            total_taxable_amount = total_taxable_amount - third_slab;
+        }
+        if(total_taxable_amount>=fourth_slab) {
+            fed_tax = (fourth_slab * fourth_slab_perc) / 100;
+            total_taxable_amount = total_taxable_amount - fourth_slab;
+        }
+        if(total_taxable_amount>=final_slab) {
+            fed_tax=(final_slab * final_slab_perc)/100;
+        }
+        return fed_tax;
+    }
+
 
 
 }
