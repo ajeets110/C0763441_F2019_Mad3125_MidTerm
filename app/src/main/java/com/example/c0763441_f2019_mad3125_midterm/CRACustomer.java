@@ -15,7 +15,8 @@ public class CRACustomer implements Parcelable {
     double gross_income;
     double rrsp_contribution;
     double EI;
-    double total_taxable_amount=(gross_income-cppAmount()+rrspAmount()+eiAmount());
+    double total_taxable_amount=(gross_income - (cppAmount()+rrspAmount()+eiAmount()));
+
 
     // G E T T E R   A N D   S E T T E R
 
@@ -29,6 +30,8 @@ public class CRACustomer implements Parcelable {
         EI = in.readDouble();
         total_taxable_amount = in.readDouble();
     }
+
+
 
     public static final Creator<CRACustomer> CREATOR = new Creator<CRACustomer>() {
         @Override
@@ -159,4 +162,16 @@ public class CRACustomer implements Parcelable {
         parcel.writeDouble(total_taxable_amount);
 
     }
+
+    public CRACustomer(int sin_number, String first_name, String last_name, String full_name, double gross_income, double rrsp_contribution) {
+        this.sin_number = sin_number;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.full_name = full_name;
+        this.gross_income = gross_income;
+        this.rrsp_contribution = rrsp_contribution;
+        this.EI = eiAmount();
+    }
+
+
 }

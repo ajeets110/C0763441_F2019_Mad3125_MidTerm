@@ -13,28 +13,27 @@
         android:padding="6dp"
         android:text="Enter Details"/>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <TextView
         android:id="@+id/edtFname"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="First Name" />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
+    <TextView
         android:id="@+id/edtLname"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Last Name" />
-    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/txtAge"
@@ -78,33 +77,45 @@
             android:text="Others" />
     </RadioGroup>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <TextView
+        android:id="@+id/edtSin"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="SIN Number"
+             />
+
+    <TextView
         android:id="@+id/edtGrossIncome"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"/>
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Gross Income"
             android:inputType="numberDecimal" />
-    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+
+    <TextView
         android:id="@+id/edtRRSP"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"/>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:hint="RRSP Contributed"
             android:inputType="numberDecimal" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btnSubmit"
