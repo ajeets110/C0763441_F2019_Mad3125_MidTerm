@@ -91,6 +91,13 @@ public class CRACustomer implements Parcelable {
     public void setRrsp_contribution(double rrsp_contribution) {
         this.rrsp_contribution = rrsp_contribution;
     }
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     // calculating CPP amount
     public double cppAmount(){

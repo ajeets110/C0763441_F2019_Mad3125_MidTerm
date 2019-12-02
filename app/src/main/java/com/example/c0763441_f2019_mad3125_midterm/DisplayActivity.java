@@ -2,6 +2,7 @@ package com.example.c0763441_f2019_mad3125_midterm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -39,6 +40,17 @@ public class DisplayActivity extends AppCompatActivity {
         txt_federal_tax = findViewById(R.id.txt_federalTax);
         txt_provincialTax = findViewById(R.id.txt_provincialTax);
         lbl_taxPaid = findViewById(R.id.txt_taxPayed);
+
+
+        Intent mIntent = getIntent();
+        CRACustomer customer = mIntent.getParcelableExtra("CRACustomer");
+
+        txt_sin.setText(" SIN: \t" + customer.getSin_number());
+        txt_full_Name.setText(" FULL NAME: \t" + customer.getFull_name());
+        txt_gender.setText(" GENDER: \t" + customer.getGender());
+        txt_gross_income.setText(" GROSS INCOME: \t" + customer.getGross_income());
+        lbl_RrspContributed.setText("RRSP Contributed: \t" + customer.getRrsp_contribution());
+
 
     }
 }
