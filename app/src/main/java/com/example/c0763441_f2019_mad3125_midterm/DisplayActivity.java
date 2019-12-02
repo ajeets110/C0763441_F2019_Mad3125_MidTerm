@@ -68,5 +68,16 @@ public class DisplayActivity extends AppCompatActivity {
         }
         lbl_empInsurance.setText("Employeement Insurance: \t" + ei);
 
+        // calculate RRSP
+        rrsp = customer.getRrsp_contribution();
+        double maxRRSP = (grossIncome * 0.18); //18%
+        if(rrsp > maxRRSP ){
+            rrspCf = rrsp - maxRRSP;
+            rrsp = maxRRSP;
+        }else{
+            rrsp = rrsp;
+        }
+        lbl_Cf_RRSP.setText("RRSP Carry forward: \t"+ rrspCf);
+
     }
 }
