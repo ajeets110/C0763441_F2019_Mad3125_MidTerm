@@ -14,6 +14,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -45,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         rb_male=findViewById(R.id.rbMale);
         rb_female=findViewById(R.id.rbFemale);
         rb_others=findViewById(R.id.rbOthers);
-        txt_date= findViewById(R.id.txtDate);
         edt_fname = findViewById(R.id.edtFname);
         edt_lname = findViewById(R.id.edtLname);
         edt_sin = findViewById(R.id.edtSin);
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 calendar.set(Calendar.YEAR, year);
                 calendar.set(Calendar.MONTH, monthOfYear);
                 calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                dateFormat();
+                dateFormatDOB();
             }
         };
         txt_date.setOnClickListener(new View.OnClickListener() {
@@ -89,24 +90,45 @@ public class MainActivity extends AppCompatActivity {
         //submit button
 
         btn_submit=findViewById(R.id.btnSubmit);
+
+
+        btn_submit=findViewById(R.id.btnSubmit);
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                // TYPE Casting
-                Double g_income = Double.parseDouble(gross_income.getText().toString());
-                Double rrs = Double.parseDouble(rrsp_contribution.getText().toString());
-                Intent mIntent=new Intent(MainActivity.this, DisplayActivity.class);
-                mIntent.putExtra("User_Data", new CRACustomer(edt_sin.getText().toString(), edt_fname.getText().toString(), edt_lname.getText().toString(), Gender_selected, g_income, rrs));
-                startActivity(mIntent);
-            }
+                String age=dateFormat();
+                if(Integer.parseInt(age)<18){
+                    btn_submit.setAlpha(.5f);
+                    btn_submit.setClickable(false);
+                }
+                else{
+                    Double grossIncome = Double.parseDouble(gross_income.getText().toString());
+                    Double rrsp = Double.parseDouble(rrsp_contribution.getText().toString());
+                    CRACustomer customer = new CRACustomer(edt_sin.getText().toString(),
+                            edt_fname.getText().toString(),
+                            edt_lname.getText().toString(),
+                            Gender_selected, grossIncome, rrsp, age);
+                    Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+                    intent.putExtra("User_Data", customer);
+                    startActivity(intent);
+                }}
         });
 
     }
 
 
     // D a t e   f o r m a t
-    private void dateFormat() {
+    private String dateFormat() {
+        LocalDate l = LocalDate.of(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        LocalDate now = LocalDate.now();
+        Period diff = Period.between(l, now);
+        String years=String.valueOf(diff.getYears());
+        String months=String.valueOf(diff.getMonths());
+        String days=String.valueOf(diff.getDays());
+        String age="Age: "+years+"Years"+months+"Months"+days+"Days";
+        return years;
+    }
+    private void dateFormatDOB() {
         String myFormat = "dd-MMM-yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 

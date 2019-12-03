@@ -14,16 +14,10 @@ public class CRACustomer implements Parcelable {
     String  last_name;
     String gender;
     String full_name;
-    Date dob,filingDate;
+    String dob;
     double gross_income;
     double rrsp_contribution;
 
-    public Date getDob() {
-        return dob;
-    }
-    public Date getFilingDate() {
-        return filingDate;
-    }
 
     // G E T T E R   A N D   S E T T E R
 
@@ -65,7 +59,7 @@ public class CRACustomer implements Parcelable {
     }
 
     public String getFull_name() {
-        return full_name;
+            return last_name.toUpperCase() + ", " + first_name.substring(0,1).toUpperCase() + first_name.substring(1);
     }
 
     public void setFull_name(String full_name) {
@@ -120,17 +114,18 @@ public class CRACustomer implements Parcelable {
         parcel.writeString(full_name);
         parcel.writeDouble(gross_income);
         parcel.writeDouble(rrsp_contribution);
-
+        parcel.writeString(gender);
 
     }
 
-    public CRACustomer(String sin_number, String first_name, String last_name, String gender, double gross_income, double rrsp_contribution) {
+    public CRACustomer(String sin_number, String first_name, String last_name, String gender, double gross_income, double rrsp_contribution, String age) {
         this.sin_number = sin_number;
         this.first_name = first_name;
         this.last_name = last_name;
         this.gross_income = gross_income;
         this.rrsp_contribution = rrsp_contribution;
         this.gender = gender;
+        dob = age;
     }
 
 
@@ -142,7 +137,6 @@ public class CRACustomer implements Parcelable {
         gender = parcel.readString();
         gross_income = parcel.readDouble();
         rrsp_contribution = parcel.readDouble();
-
     }
 
 

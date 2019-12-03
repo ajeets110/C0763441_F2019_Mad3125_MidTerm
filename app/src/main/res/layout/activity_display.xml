@@ -66,7 +66,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="TAX Filing Date" />
-            <TextView android:id="@+id/txt_CppYear"
+            <TextView android:id="@+id/txt_Cpp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -93,7 +93,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:hint="carry forward RRSP" />
+                android:hint="Carry forward RRSP" />
             <TextView android:id="@+id/id_taxableIncome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -7,13 +7,16 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class DisplayActivity extends AppCompatActivity {
 
     CRACustomer customer;
     TextView txt_sin;
     TextView txt_full_Name;
     TextView txt_gender;
-    TextView txt_gross_income, txt_taxDate, txt_federal_tax, txt_provincialTax, lbl_cpp, lbl_empInsurance, lbl_RrspContributed, lbl_Cf_RRSP, lbl_taxableIncome, lbl_taxPaid;
+    TextView txt_gross_income, txt_taxDate, txt_federal_tax, txt_provincialTax, lbl_cpp, lbl_empInsurance, lbl_RrspContributed, lbl_Cf_RRSP, lbl_taxableIncome, lbl_taxPaid, lbl_TaxFilingDate;
     double cpp = 0;
     double rrsp = 0;
     double rrspCf = 0;
@@ -34,17 +37,18 @@ public class DisplayActivity extends AppCompatActivity {
         txt_gender = findViewById(R.id.txt_gender);
         txt_gross_income = findViewById(R.id.txt_grossIncome);
         lbl_RrspContributed = findViewById(R.id.txt_rrspContribution);
-        lbl_cpp = findViewById(R.id.txt_CppYear);
+        lbl_cpp = findViewById(R.id.txt_Cpp);
         lbl_empInsurance = findViewById(R.id.txt_empInsurance);
         lbl_Cf_RRSP = findViewById(R.id.txt_cfRrsp);
         lbl_taxableIncome = findViewById(R.id.id_taxableIncome);
         txt_federal_tax = findViewById(R.id.txt_federalTax);
         txt_provincialTax = findViewById(R.id.txt_provincialTax);
         lbl_taxPaid = findViewById(R.id.txt_taxPayed);
-
+        lbl_TaxFilingDate = findViewById(R.id.txt_taxFilingDate);
 
         Intent mIntent = getIntent();
         CRACustomer customer = mIntent.getParcelableExtra("User_Data");
+
 
         txt_sin.setText(" SIN: \t" + customer.getSin_number());
         txt_full_Name.setText(" FULL NAME: \t" + customer.getFull_name());
@@ -61,7 +65,7 @@ public class DisplayActivity extends AppCompatActivity {
         } else {
             cpp = (grossIncome * 0.051);
         }
-        lbl_cpp.setText("CPP COntribution in Year:\t" + cpp);
+        lbl_cpp.setText("CPP Contribution in Year:\t" + cpp);
 
         // calculate employement insurance
             if (grossIncome > 53100) {
@@ -89,15 +93,21 @@ public class DisplayActivity extends AppCompatActivity {
             lbl_taxableIncome.setText("Taxable income:\t" + (double) totalTaxableAmount);
 
 
-            /federal tax
+        //federal tax
         double calFederal = calcFedralTax();
-        txtfederal_Tax.setText("Federal Tax: \t" + calFederal);
+        txt_federal_tax.setText("Federal Tax: \t" + calFederal);
         // Provincial Tax
         double calProvincial = calcProvincialTax();
-        txtprovincial_Tax.setText("Provincial Tax:\t" + calProvincial);
+        txt_provincialTax.setText("Provincial Tax:\t" + calProvincial);
         // total tax paid
-        double taxpaid = calTaxPaid();
-        lblTaxPaid.setText("Total tax Paid:\t" + taxpaid);
+        double taxpaid = calcTaxPaid();
+        lbl_taxPaid.setText("Total tax Paid:\t" + taxpaid);
+
+        // tax filing date
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        Date todayDate = new Date();
+        String thisDate = currentDate.format(todayDate);
+        lbl_TaxFilingDate.setText("Tax Filing Date: " + thisDate);
 
     }
 
