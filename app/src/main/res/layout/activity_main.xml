@@ -5,37 +5,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFEB3B"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
         android:padding="6dp"
-        android:text="Enter Details"/>
+        android:text="Enter Details"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
 
     <EditText
         android:id="@+id/edtFname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="First Name" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:hint="First Name" />
+
     <EditText
         android:id="@+id/edtLname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last Name"/>
-
+        android:layout_marginTop="15sp"
+        android:hint="Last Name" />
 
 
     <TextView
         android:id="@+id/txtDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="6dp"
+        android:layout_marginTop="15sp"
         android:outlineProvider="bounds"
-        android:text="Select Date Of Birth"
+        android:padding="6dp"
 
+        android:text="Select Date Of Birth"
         android:textSize="18sp" />
 
 
@@ -48,6 +54,7 @@
             android:id="@+id/rbMale"
             android:layout_width="match_parent"
             android:layout_height="34dp"
+            android:layout_marginTop="6sp"
             android:text="Male" />
 
         <RadioButton
@@ -67,7 +74,8 @@
         android:id="@+id/edtSin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Sin Number"/>
+        android:layout_marginTop="15sp"
+        android:hint="Sin Number" />
 
     <EditText
         android:id="@+id/edtGrossIncome"

@@ -25,7 +25,7 @@ public class DisplayActivity extends AppCompatActivity {
     double provincialTax;
     double totalTaxPaid;
     double emp_Insurance;
-
+    TextView lblAge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +108,10 @@ public class DisplayActivity extends AppCompatActivity {
         Date todayDate = new Date();
         String thisDate = currentDate.format(todayDate);
         lbl_TaxFilingDate.setText("Tax Filing Date: " + thisDate);
+
+        lblAge = findViewById(R.id.txt_age);
+        lblAge.setText("Age : " + customer.dob);
+
 
     }
 

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFEB3B"
     tools:context=".DisplayActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,10 +14,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/txt_Sin"
                 android:layout_width="match_parent"
@@ -27,6 +31,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/txt_fullName"
                 android:layout_width="match_parent"
@@ -38,84 +43,108 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_Sin" />
-            <TextView android:id="@+id/txt_age"
+
+            <TextView
+                android:id="@+id/txt_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Age" />
-            <TextView android:id="@+id/txt_gender"
+
+            <TextView
+                android:id="@+id/txt_gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Gender" />
-            <TextView android:id="@+id/txt_grossIncome"
+
+            <TextView
+                android:id="@+id/txt_grossIncome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Gross Income" />
-            <TextView android:id="@+id/txt_taxFilingDate"
+
+            <TextView
+                android:id="@+id/txt_taxFilingDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="TAX Filing Date" />
-            <TextView android:id="@+id/txt_Cpp"
+
+            <TextView
+                android:id="@+id/txt_Cpp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="CPP contribution in Year" />
-            <TextView android:id="@+id/txt_empInsurance"
+
+            <TextView
+                android:id="@+id/txt_empInsurance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Employement Insurance" />
-            <TextView android:id="@+id/txt_rrspContribution"
+
+            <TextView
+                android:id="@+id/txt_rrspContribution"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="RRSP contributed" />
-            <TextView android:id="@+id/txt_cfRrsp"
+
+            <TextView
+                android:id="@+id/txt_cfRrsp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Carry forward RRSP" />
-            <TextView android:id="@+id/id_taxableIncome"
+
+            <TextView
+                android:id="@+id/id_taxableIncome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Total Taxable Income" />
-            <TextView android:id="@+id/txt_federalTax"
+
+            <TextView
+                android:id="@+id/txt_federalTax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Federal Tax" />
-            <TextView android:id="@+id/txt_provincialTax"
+
+            <TextView
+                android:id="@+id/txt_provincialTax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Provincial Tax" />
-            <TextView android:id="@+id/txt_taxPayed"
+
+            <TextView
+                android:id="@+id/txt_taxPayed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

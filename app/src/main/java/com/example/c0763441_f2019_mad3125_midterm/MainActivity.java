@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rb_others;
     TextView edt_fname;
     TextView edt_lname;
+    String age;
     Button btn_submit;
     TextView txt_age;
     DatePickerDialog datePickerDialog;
@@ -96,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String age=dateFormat();
-                if(Integer.parseInt(age)<18){
+                String age1=dateFormat();
+                if(Integer.parseInt(age1)<18){
                     btn_submit.setAlpha(.5f);
                     btn_submit.setClickable(false);
                 }
@@ -125,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         String years=String.valueOf(diff.getYears());
         String months=String.valueOf(diff.getMonths());
         String days=String.valueOf(diff.getDays());
-        String age="Age: "+years+"Years"+months+"Months"+days+"Days";
+        age="Age: "+years+"Years"+months+"Months"+days+"Days";
         return years;
     }
     private void dateFormatDOB() {

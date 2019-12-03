@@ -115,6 +115,7 @@ public class CRACustomer implements Parcelable {
         parcel.writeDouble(gross_income);
         parcel.writeDouble(rrsp_contribution);
         parcel.writeString(gender);
+        parcel.writeString(dob);
 
     }
 
