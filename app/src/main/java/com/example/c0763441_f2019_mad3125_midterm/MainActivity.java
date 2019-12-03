@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 String age1=dateFormat();
                 if(Integer.parseInt(age1)<18){
                     btn_submit.setAlpha(.5f);
-                    btn_submit.setClickable(false);
+                    btn_submit.setClickable(false); 
                 }
                 else{
                     Double grossIncome = Double.parseDouble(gross_income.getText().toString());
